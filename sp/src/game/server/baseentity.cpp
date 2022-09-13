@@ -3733,11 +3733,11 @@ int CBaseEntity::ShouldToggle( USE_TYPE useType, int currentState )
 
 // NOTE: szName must be a pointer to constant memory, e.g. "NPC_class" because the entity
 // will keep a pointer to it after this call.
-CBaseEntity *CBaseEntity::Create( const char *szName, const Vector &vecOrigin, const QAngle &vecAngles, CBaseEntity *pOwner )
+CBaseEntity *CBaseEntity::Create(const char *szName, const Vector &vecOrigin, const QAngle &vecAngles, CBaseEntity *pOwner)
 {
-	CBaseEntity *pEntity = CreateNoSpawn( szName, vecOrigin, vecAngles, pOwner );
+	CBaseEntity *pEntity = CreateNoSpawn(szName, vecOrigin, vecAngles, pOwner);
 
-	DispatchSpawn( pEntity );
+	DispatchSpawn(pEntity);
 	return pEntity;
 }
 
@@ -3745,20 +3745,20 @@ CBaseEntity *CBaseEntity::Create( const char *szName, const Vector &vecOrigin, c
 
 // NOTE: szName must be a pointer to constant memory, e.g. "NPC_class" because the entity
 // will keep a pointer to it after this call.
-CBaseEntity * CBaseEntity::CreateNoSpawn( const char *szName, const Vector &vecOrigin, const QAngle &vecAngles, CBaseEntity *pOwner )
+CBaseEntity * CBaseEntity::CreateNoSpawn(const char *szName, const Vector &vecOrigin, const QAngle &vecAngles, CBaseEntity *pOwner)
 {
-	CBaseEntity *pEntity = CreateEntityByName( szName );
-	if ( !pEntity )
+	CBaseEntity *pEntity = CreateEntityByName(szName);
+	if (!pEntity)
 	{
-		Assert( !"CreateNoSpawn: only works for CBaseEntities" );
+		Assert(!"CreateNoSpawn: only works for CBaseEntities");
 		return NULL;
 	}
 
-	pEntity->SetLocalOrigin( vecOrigin );
-	pEntity->SetLocalAngles( vecAngles );
-	pEntity->SetOwnerEntity( pOwner );
+	pEntity->SetLocalOrigin(vecOrigin);
+	pEntity->SetLocalAngles(vecAngles);
+	pEntity->SetOwnerEntity(pOwner);
 
-	gEntList.NotifyCreateEntity( pEntity );
+	gEntList.NotifyCreateEntity(pEntity);
 
 	return pEntity;
 }
