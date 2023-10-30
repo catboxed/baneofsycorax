@@ -505,4 +505,3 @@ private:
 };
 
 DECLARE_HUDELEMENT(CHudSecondaryAmmo);
-

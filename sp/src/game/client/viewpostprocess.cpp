@@ -40,7 +40,7 @@ float g_flCustomBloomScale = 0.0f;
 float g_flCustomBloomScaleMinimum = 0.0f;
 
 // mapmaker controlled depth of field
-bool  g_bDOFEnabled = false;
+extern bool  g_bDOFEnabled = false;
 float g_flDOFNearBlurDepth = 20.0f;
 float g_flDOFNearFocusDepth = 100.0f;
 float g_flDOFFarFocusDepth = 250.0f;

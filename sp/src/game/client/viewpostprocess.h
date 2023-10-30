@@ -21,6 +21,7 @@ void SetRenderTargetAndViewPort( ITexture *rt );
 
 bool IsDepthOfFieldEnabled();
 void DoDepthOfField( const CViewSetup &view );
+extern bool g_bDOFEnabled;
 
 void SetPostProcessParams( const PostProcessParameters_t* pPostProcessParameters );
 void SetPostProcessParams( const PostProcessParameters_t* pPostProcessParameters, bool override );

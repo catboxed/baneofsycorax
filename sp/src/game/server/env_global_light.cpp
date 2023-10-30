@@ -39,7 +39,7 @@ public:
 	void	InputSetLightColor( inputdata_t &inputdata );
 #ifdef MAPBASE
 	void	InputSetBrightness( inputdata_t &inputdata );
-	void	InputSetColorTransitionTime( inputdata_t &inputdata );
+	void InputSetColorTransitionTime(inputdata_t &inputdata);
 	void	InputSetXOffset( inputdata_t &inputdata ) { m_flEastOffset = inputdata.value.Float(); }
 	void	InputSetYOffset( inputdata_t &inputdata ) { m_flForwardOffset = inputdata.value.Float(); }
 	void	InputSetOrthoSize( inputdata_t &inputdata ) { m_flOrthoSize = inputdata.value.Float(); }
@@ -129,9 +129,10 @@ BEGIN_DATADESC( CGlobalLight )
 	DEFINE_INPUTFUNC( FIELD_VOID, "Disable", InputDisable ),
 	DEFINE_INPUTFUNC( FIELD_STRING, "SetTexture", InputSetTexture ),
 	DEFINE_INPUTFUNC( FIELD_BOOLEAN, "EnableShadows", InputSetEnableShadows ),
+	DEFINE_INPUTFUNC(FIELD_FLOAT, "SetColorTransitionTime", InputSetColorTransitionTime),
+
 #ifdef MAPBASE
 	DEFINE_INPUTFUNC( FIELD_FLOAT, "SetBrightness", InputSetBrightness ),
-	DEFINE_INPUTFUNC( FIELD_FLOAT, "SetColorTransitionTime", InputSetColorTransitionTime ),
 #endif
 
 END_DATADESC()
@@ -329,7 +330,7 @@ void CGlobalLight::InputSetBrightness( inputdata_t &inputdata )
 	m_flBrightnessScale = inputdata.value.Float();
 }
 
-void CGlobalLight::InputSetColorTransitionTime( inputdata_t &inputdata )
+void CGlobalLight::InputSetColorTransitionTime(inputdata_t &inputdata)
 {
 	m_flColorTransitionTime = inputdata.value.Float();
 }
